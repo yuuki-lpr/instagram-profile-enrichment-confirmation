@@ -7,7 +7,7 @@
 - JavaScriptによる外部API通信・データ送信、フォーム送信、ブラウザ保存
 - プロフィール取得やセル書込み
 
-表示バージョンは v0.1.40 です。unit 263/263、security 4/4、E2E 7/7 はローカルfixture検証のスナップショットであり、実データの成功証明ではありません。
+表示バージョンは v0.1.41 です。unit 264/264、security 4/4、E2E 7/7 はローカルfixture検証のスナップショットであり、実データの成功証明ではありません。
 
 公開ページ: https://yuuki-lpr.github.io/instagram-profile-enrichment-confirmation/
 
