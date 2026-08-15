@@ -26,11 +26,13 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          expected_files=$'.github/workflows/pages.yml\nREADME.md\nsite/index.html'
+          test "$(git ls-files | sort)" = "$(printf '%s\n' "$expected_files" | sort)"
           test -f site/index.html
           test "$(find site -type f | sort)" = "site/index.html"
           test -f README.md
           ! grep -nE 'AIza|gho_|client_secret|access_token|spreadsheets/d/|instagram\.com/' site/index.html README.md
-          ! grep -nE '<script|<form|fetch\(|localStorage|sessionStorage|serviceWorker' site/index.html
+          ! grep -niE '<script|<form|fetch\(|localStorage|sessionStorage|serviceWorker|<iframe|<object|<embed|<img|<link|url\(|@import|https?://' site/index.html
           grep -q 'fixture確認ページ' site/index.html
           grep -q 'fixture-only' site/index.html
           grep -q 'fixture-only' README.md
