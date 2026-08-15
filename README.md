@@ -4,7 +4,7 @@
 
 - Google Sheets / Instagram / OAuth / MCP への接続
 - Chrome拡張APIの実行
-- 外部通信、フォーム送信、ブラウザ保存
+- JavaScriptによる外部API通信・データ送信、フォーム送信、ブラウザ保存
 - プロフィール取得やセル書込み
 
 表示バージョンは v0.1.30 です。unit 250/250、security 4/4、E2E 7/7 はローカルfixture検証のスナップショットであり、実データの成功証明ではありません。
