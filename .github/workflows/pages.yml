@@ -31,7 +31,7 @@ jobs:
           ! grep -nE 'AIza|gho_|client_secret|access_token|spreadsheets/d/|instagram\.com/' site/index.html
           ! grep -nE '<script|<form|fetch\(|localStorage|sessionStorage|serviceWorker' site/index.html
           grep -q 'fixture確認ページ' site/index.html
-          grep -q 'v0.1.29' site/index.html
+          grep -q 'v0.1.30' site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
