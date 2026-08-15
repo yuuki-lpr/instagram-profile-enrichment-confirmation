@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instagram Profile Enrichment v0.1.29 | 公開確認ページ</title>
+  <style>
+    :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; }
+    body { margin: 0; background: #f3f7f5; color: #15352d; }
+    main { max-width: 920px; margin: 0 auto; padding: 48px 22px 64px; }
+    .banner { border: 2px solid #26745f; border-radius: 18px; padding: 18px 20px; background: #e7f5ee; font-weight: 700; }
+    .eyebrow { margin-top: 36px; color: #26745f; font-weight: 700; letter-spacing: .12em; }
+    h1 { margin: 8px 0 12px; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; }
+    h2 { margin-top: 32px; font-size: 1.35rem; }
+    p, li { line-height: 1.8; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 22px; }
+    .card { border: 1px solid #c8ddd4; border-radius: 14px; padding: 18px; background: #fff; }
+    .label { color: #54756b; font-size: .9rem; }
+    .value { margin-top: 6px; font-size: 1.2rem; font-weight: 700; }
+    .safe { color: #176c4f; }
+    .warning { color: #9b5b13; }
+    a { color: #145f9e; }
+    footer { margin-top: 36px; color: #54756b; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="banner">公開fixture確認ページ（live Dashboardではありません）</div>
+    <div class="eyebrow">INSTAGRAM PROFILE ENRICHMENT</div>
+    <h1>安全境界と画面の確認</h1>
+    <p>このページは、拡張機能の画面と安全停止の状態を確認するための静的ページです。Google Sheets、Instagram、OAuth、MCP、Chrome API、外部通信、セル書込みには接続していません。</p>
+
+    <div class="grid">
+      <section class="card"><div class="label">表示バージョン</div><div class="value">v0.1.29</div></section>
+      <section class="card"><div class="label">ローカルfixture検証</div><div class="value safe">unit 250/250</div></section>
+      <section class="card"><div class="label">安全性・ブラウザfixture</div><div class="value safe">security 4/4 ・ E2E 7/7</div></section>
+    </div>
+
+    <h2>このページで確認できること</h2>
+    <ul>
+      <li>公開版が「実データへ接続していない」こと</li>
+      <li>OAuth未設定・接続未確立時に書込みを開始しない設計であること</li>
+      <li>画面表示と、fixture上の検証結果・バージョン</li>
+    </ul>
+
+    <h2>確認できないこと</h2>
+    <ul>
+      <li>実際のGoogle Sheetsの読込み・プロフィール取得・セル書込み</li>
+      <li>Instagramのログイン状態やDOM取得結果</li>
+      <li>MCPとChrome拡張の接続・自動実行</li>
+    </ul>
+
+    <p class="warning"><strong>重要：</strong>このページから拡張機能をインストール・起動することはできません。実拡張はChromeの「パッケージ化されていない拡張機能を読み込む」から、権限のある開発者向けリポジトリを使います。</p>
+    <p><a href="https://github.com/yuuki-lpr/instagram-profile-enrichment">開発リポジトリ（権限のある開発者向け）</a> ／ <a href="https://github.com/yuuki-lpr/instagram-profile-enrichment/pull/1">Draft PR #1</a></p>
+
+    <footer>fixture-only。実OAuth・実Sheets・実Instagram・MCP・セル書込みの成功証明ではありません。</footer>
+  </main>
+</body>
+</html>
