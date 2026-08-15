@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Instagram Profile Enrichment v0.1.29 | 公開確認ページ</title>
+  <title>Instagram Profile Enrichment v0.1.30 | 公開確認ページ</title>
   <style>
     :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; }
     body { margin: 0; background: #f3f7f5; color: #15352d; }
@@ -25,21 +25,21 @@
 </head>
 <body>
   <main>
-    <div class="banner">公開fixture確認ページ（live Dashboardではありません）</div>
+    <div class="banner">公開fixture確認ページ（fixture-onlyの静的ページです。live Dashboardではありません）</div>
     <div class="eyebrow">INSTAGRAM PROFILE ENRICHMENT</div>
     <h1>安全境界と画面の確認</h1>
-    <p>このページは、拡張機能の画面と安全停止の状態を確認するための静的ページです。Google Sheets、Instagram、OAuth、MCP、Chrome API、外部通信、セル書込みには接続していません。</p>
+    <p>このページは、固定fixtureの表示と安全境界を確認するための静的HTMLです。JavaScriptは含まず、外部API通信、データ送信、フォーム送信、ブラウザ保存、セル書込みを行いません。</p>
 
     <div class="grid">
-      <section class="card"><div class="label">表示バージョン</div><div class="value">v0.1.29</div></section>
+      <section class="card"><div class="label">表示バージョン</div><div class="value">v0.1.30</div></section>
       <section class="card"><div class="label">ローカルfixture検証</div><div class="value safe">unit 250/250</div></section>
       <section class="card"><div class="label">安全性・ブラウザfixture</div><div class="value safe">security 4/4 ・ E2E 7/7</div></section>
     </div>
 
     <h2>このページで確認できること</h2>
     <ul>
-      <li>公開版が「実データへ接続していない」こと</li>
-      <li>OAuth未設定・接続未確立時に書込みを開始しない設計であること</li>
+      <li>この公開ページがfixture-onlyであること</li>
+      <li>このHTMLが外部API通信・データ送信・ブラウザ保存を行わないこと</li>
       <li>画面表示と、fixture上の検証結果・バージョン</li>
     </ul>
 
@@ -50,8 +50,7 @@
       <li>MCPとChrome拡張の接続・自動実行</li>
     </ul>
 
-    <p class="warning"><strong>重要：</strong>このページから拡張機能をインストール・起動することはできません。実拡張はChromeの「パッケージ化されていない拡張機能を読み込む」から、権限のある開発者向けリポジトリを使います。</p>
-    <p><a href="https://github.com/yuuki-lpr/instagram-profile-enrichment">開発リポジトリ（権限のある開発者向け）</a> ／ <a href="https://github.com/yuuki-lpr/instagram-profile-enrichment/pull/1">Draft PR #1</a></p>
+    <p class="warning"><strong>重要：</strong>このページから拡張機能をインストール・起動することはできません。公開ページは確認用であり、拡張ソースやGitHubの非公開開発導線を掲載していません。</p>
 
     <footer>fixture-only。実OAuth・実Sheets・実Instagram・MCP・セル書込みの成功証明ではありません。</footer>
   </main>
