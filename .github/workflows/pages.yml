@@ -28,10 +28,20 @@ jobs:
           set -euo pipefail
           test -f site/index.html
           test "$(find site -type f | sort)" = "site/index.html"
-          ! grep -nE 'AIza|gho_|client_secret|access_token|spreadsheets/d/|instagram\.com/' site/index.html
+          test -f README.md
+          ! grep -nE 'AIza|gho_|client_secret|access_token|spreadsheets/d/|instagram\.com/' site/index.html README.md
           ! grep -nE '<script|<form|fetch\(|localStorage|sessionStorage|serviceWorker' site/index.html
           grep -q 'fixture確認ページ' site/index.html
-          grep -q 'v0.1.30' site/index.html
+          grep -q 'fixture-only' site/index.html
+          grep -q 'fixture-only' README.md
+          site_version="$(grep -oE 'v[0-9]+\.[0-9]+\.[0-9]+' site/index.html | head -n1)"
+          readme_version="$(grep -oE 'v[0-9]+\.[0-9]+\.[0-9]+' README.md | head -n1)"
+          test -n "$site_version"
+          test "$site_version" = "$readme_version"
+          site_unit="$(grep -oE 'unit [0-9]+/[0-9]+' site/index.html | head -n1)"
+          readme_unit="$(grep -oE 'unit [0-9]+/[0-9]+' README.md | head -n1)"
+          test -n "$site_unit"
+          test "$site_unit" = "$readme_unit"
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
